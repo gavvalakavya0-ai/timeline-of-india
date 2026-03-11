@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Chronicles of India</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #f8f8f8;
+        }
+
+        /* NAVBAR */
+
+        nav {
+            position: sticky;
+            top: 0;
+            background: white;
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 8%;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 999;
+        }
+
+        nav h2 {
+            color: #ff7f00;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #138808;
+        }
+
+        /* HERO */
+
+        .hero {
+            height: 90vh;
+            background: url("https://images.unsplash.com/photo-1548013146-72479768bada") center/cover fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 60px;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        /* INTRO */
+
+        .section {
+            padding: 70px 10%;
+        }
+
+        .intro {
+            text-align: center;
+        }
+
+        .intro h2 {
+            color: #ff7f00;
+            margin-bottom: 20px;
+        }
+
+        .intro p {
+            max-width: 800px;
+            margin: auto;
+            line-height: 1.8;
+        }
+
+        /* TIMELINE */
+
+        .timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background: #138808;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+        }
+
+        .container {
+            padding: 20px 40px;
+            position: relative;
+            width: 50%;
+        }
+
+        .container.left {
+            left: 0;
+        }
+
+        .container.right {
+            left: 50%;
+        }
+
+        .content {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .content h3 {
+            color: #ff7f00;
+            margin-bottom: 10px;
+        }
+
+        /* EVENTS */
+
+        .events {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card-content h4 {
+            color: #138808;
+        }
+
+        /* ABOUT */
+
+        .about {
+            text-align: center;
+            max-width: 800px;
+            margin: auto;
+            line-height: 1.8;
+        }
+
+        /* CONTACT */
+
+        .contact form {
+            max-width: 500px;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .contact input,
+        .contact textarea {
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .contact button {
+            background: #ff7f00;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .contact button:hover {
+            background: #138808;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #111;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+        }
+
+        footer .icons i {
+            margin: 10px;
+            cursor: pointer;
+        }
+
+        /* MOBILE */
+
+        @media(max-width:768px) {
+
+            .timeline::after {
+                left: 20px;
+            }
+
+            .container {
+                width: 100%;
+                padding-left: 60px;
+                padding-right: 25px;
+            }
+
+            .container.right {
+                left: 0;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            nav ul {
+                display: none;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <h2>Chronicles of India</h2>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#timeline">Timeline</a></li>
+            <li><a href="#events">Events</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <h1>Chronicles of India</h1>
+    </section>
+
+    <section class="section intro">
+        <h2>India's Historical Journey</h2>
+        <p>
+            India has one of the oldest and richest histories in the world. From the ancient Indus Valley Civilization
+            to the rise of great empires like the Mauryas and Guptas, the country has witnessed remarkable cultural,
+            scientific, and architectural achievements. India’s history reflects centuries of innovation, trade,
+            spirituality, and diversity. Empires rose and fell, leaving behind monuments, literature, and traditions
+            that still influence modern society. This digital timeline explores the most significant milestones that
+            shaped India's past and continue to inspire its future.
+        </p>
+        <hr>
+        <hr>
+    </section>
+
+    <section id="timeline" class="section">
+        <h2 style="text-align:center;color:#138808">Historical Timeline</h2>
+
+        <div class="timeline">
+
+            <div class="container left">
+                <div class="content">
+                    <h3>320 CE</h3>
+                    <p>Gupta Empire Golden Age.</p>
+                </div>
+            </div>
+
+            <div class="container right">
+                <div class="content">
+                    <h3>322 BCE</h3>
+                    <p>Mauryan Empire established.</p>
+                </div>
+            </div>
+
+            <div class="container left">
+                <div class="content">
+                    <h3>1206</h3>
+                    <p>Delhi sultanate established.</p>
+                </div>
+            </div>
+
+            <div class="container right">
+                <div class="content">
+                    <h3>1556</h3>
+                    <p>Akbar begins Mughal reign.</p>
+                </div>
+            </div>
+
+            <div class="container left">
+                <div class="content">
+                    <h3>1947</h3>
+                    <p>India gains Independence.</p>
+                </div>
+            </div>
+
+            <div class="container right">
+                <div class="content">
+                    <h3>2600 BCE</h3>
+                    <p>Indus valley civilization begins.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="events" class="section">
+        <h2 style="text-align:center;color:#ff7f00">Historical Events</h2>
+
+        <div class="events">
+
+            <div class="card">
+                <img src="C:\Users\gavva\Downloads\indus vally civilization.jpeg">
+                <div class="card-content">
+                    <h4>Indus Valley Civilization</h4>
+                    <p>The Indus Valley Civilisation (IVC), or Harappan Civilization (~3300–1300 BCE), was a major
+                        Bronze Age civilization spanning modern-day Pakistan and northwest India. It is renowned for
+                        advanced urban planning, grid-pattern cities, baked brick houses, and sophisticated drainage
+                        systems. Key features included specialized crafts, international trade, and undeciphered script.
+                    </p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="C:\Users\gavva\Downloads\mayuran empire.jpeg">
+                <div class="card-content">
+                    <h4>Mauryan Empire</h4>
+                    <p>The Mauryan Empire (c. 321–185 BCE) was the first dynasty to unify most of the Indian
+                        subcontinent, establishing a, strong, centralized government based in Pataliputra (modern-day
+                        Patna). Founded by Chandragupta Maurya with the help of his mentor, Chanakya, the empire grew
+                        into one of the largest in the world at its height under Ashoka the Great.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="C:\Users\gavva\Downloads\gupta empire.jpeg">
+                <div class="card-content">
+                    <h4>Gupta Golden Age</h4>
+                    <p>The Gupta Empire (c. 320–550 CE) is considered India's "Golden Age" for unmatched advancements in
+                        art, science, and literature under rulers like Samudragupta and Chandragupta II. It was
+                        characterized by refined sculpture (Sarnath Buddha), structural Hindu temples, the "decimal
+                        system" in mathematics, and literature by Kalidasa.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="C:\Users\gavva\Downloads\indian independence.jpeg">
+                <div class="card-content">
+                    <h4>India gains independence</h4>
+                    <p>India gained independence from British rule on August 15, 1947, ending nearly two centuries of
+                        colonial domination through a largely nonviolent struggle led by the Indian National Congress
+                        and figures like Mahatma Gandhi. The independence was coupled with the painful partition of the
+                        country into India and Pakistan.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="C:\Users\gavva\Downloads\dehli sultanate.jpeg">
+                <div class="card-content">
+                    <h4>Delhi Sultanate</h4>
+                    <p>The Delhi Sultanate (1206–1526) was an Islamic empire based in Delhi that stretched over large
+                        parts of the Indian subcontinent for 320 years. It was established following the conquests of
+                        Muhammad Ghori and was governed by five successive dynasties of Turkic and Afghan origin. This
+                        era marked a significant period of Indo-Islamic fusion in culture, architecture, and
+                        administration.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="C:\Users\gavva\Downloads\akbar.jpeg">
+                <div class="card-content">
+                    <h4>Akbar begins mughal reign.</h4>
+                    <p>Akbar the Great (reigned 1556–1605) is considered the true consolidator of the Mughal Empire in
+                        India, ascending to the throne at a young age to inherit a fragile kingdom and transforming it
+                        into a, prosperous, and culturally diverse empire.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <section id="about" class="section about">
+        <h2 style="color:#ff7f00">About This Project</h2>
+        <p>
+            Chronicles of India is a digital educational platform that presents important historical milestones through
+            an engaging visual timeline. The purpose of this project is to make learning Indian history interactive,
+            accessible, and visually appealing for students and history enthusiasts. By combining historical
+            descriptions, images, and a structured timeline, the website highlights the major civilizations, empires,
+            monuments, and movements that shaped India’s rich cultural heritage.
+        </p>
+    </section>
+
+    <section id="contact" class="section contact">
+        <h2 style="text-align:center;color:#138808">Contact Us</h2>
+
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea rows="5" placeholder="Your Message"></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+
+    </section>
+
+    <footer>
+
+        <p>© 2026 Chronicles of India | Digital History Project</p>
+
+        <div class="icons">
+            <i class="fab fa-facebook"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-twitter"></i>
+        </div>
+
+    </footer>
+
+    <script>
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener("click", function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute("href"))
+                    .scrollIntoView({ behavior: "smooth" });
+            });
+        });
+
+    </script>
+
+</body>
+
+</html>
